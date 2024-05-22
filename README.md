@@ -16,6 +16,7 @@ You can use Walk-Go by running the `main.go` file with the following command-lin
 - `-root`: The root directory to start the traversal. Default is the current directory.
 - `-list`: If set, the program will only list the files.
 - `-del`: If set, the program will delete the files that match the criteria.
+- `-archive`: If set, the program will archive the files to the specified directory.
 - `-ext`: The file extension to filter out.
 - `-size`: The minimum file size to consider.
 - `-log`: The file to log deleted files to.
@@ -23,10 +24,10 @@ You can use Walk-Go by running the `main.go` file with the following command-lin
 Here is an example of how to use Walk-Go:
 
 ```bash
-go run main.go -root ./mydir -list -ext .txt -size 100 -log deletelog.txt
+go run main.go -root ./mydir -list -ext .txt -size 100 -log deletelog.txt -archive ./archiveDir
 ```
 
-This command will list all `.txt` files in the `mydir` directory that are at least 100 bytes in size and log the deleted files to `deletelog.txt`. If the `-del` flag is set instead of `-list`, the files will be deleted.
+This command will list all `.txt` files in the `mydir` directory that are at least 100 bytes in size, archive them to the `archiveDir` directory, and log the deleted files to `deletelog.txt`. If the `-del` flag is set instead of `-list`, the files will be deleted
 
 ## Testing
 Tests for Walk-Go are located in main_test.go and actions_test.go. You can run the tests for Walk-Go by running the following command:
